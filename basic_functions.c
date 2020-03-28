@@ -1,32 +1,32 @@
 #include <stdio.h>
 
-unsigned char is_even(int num);
-unsigned char is_odd(int num);
-int square(int num);
-int cube(int num);
+unsigned char is_even(int num1);
+unsigned char is_odd(int num1);
+int square(int num1);
+int cube(int num1);
 
-int cube(int num){
-  return square(num)*num;
+int cube(int num1){
+  return square(num1)*num1;
 }
 
-int square(int num){
-  return num * num;
+int square(int num1){
+  return num1 * num1;
 }
 
-unsigned char is_odd(int num){
-  return !is_even(num);
+unsigned char is_odd(int num1){
+  return !is_even(num1);
 }
 
-unsigned char is_even(int num){
-  return num % 2 == 0;
+unsigned char is_even(int num1){
+  return num1 % 2 == 0;
 }
 
 int main(void)
 {
-  int num = 2;
-  printf("%d is %s\n",num, is_even(num)?"even":"not even");
-  printf("%d is %s\n", num, is_odd(num)? "odd" : "not odd");
-  printf("The square of %d is %d\n",num,square(num));
-  printf("The cube of %d is %d\n",num,cube(num));
+  int num1 = 2;
+  printf("%d is %s\n",num1, is_even(num1)?"even":"not even");
+  printf("%d is %s\n", num1, is_odd(num1)? "odd" : "not odd");
+  printf("The square of %d is %d\n",num1,square(num1));
+  printf("The cube of %d is %d\n",num1,cube(num1));
 
 }

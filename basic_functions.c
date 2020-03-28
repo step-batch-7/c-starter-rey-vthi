@@ -5,6 +5,11 @@ unsigned char is_odd(int num1);
 int square(int num1);
 int cube(int num1);
 int gcd(int num1,int num2);
+int lcm(int num1,int num2);
+
+int lcm(int num1,int num2){
+  return num1*num2/gcd(num1,num2);
+}
 
 int gcd(int num1, int num2)
 {
@@ -35,5 +40,7 @@ int main(void)
   printf("%d is %s\n", num1, is_odd(num1)? "odd" : "not odd");
   printf("The square of %d is %d\n",num1,square(num1));
   printf("The cube of %d is %d\n",num1,cube(num1));
-  printf("Gcd of %d and %d is %d\n",num1,num2,gcd(num1,num2));
+  printf("GCD of %d and %d is %d\n",num1,num2,gcd(num1,num2));
+  printf("LCM of %d and %d is %d\n",num1,num2,lcm(num1,num2));
+
 }

@@ -9,6 +9,11 @@ int gcd(int num1,int num2);
 int lcm(int num1,int num2);
 float si(int principle,float interest,int time);
 float ci(int principle,float interest,int time);
+float convert_to_centigrade(int temp);
+
+float convert_to_centigrade(int temp) {
+  return ((temp - 32) * 5) / 9.00;
+}
 
 float ci(int p, float r, int t){
   return p * pow((1 + r/100), t) - p;
@@ -47,7 +52,7 @@ int main(void)
   int num1 = 2;
   int num2 = 3;
   int principle,time;
-  float interest;
+  float interest,temp;
   printf("%d is %s\n",num1, is_even(num1)?"even":"not even");
   printf("%d is %s\n", num1, is_odd(num1)? "odd" : "not odd");
   printf("The square of %d is %d\n",num1,square(num1));
@@ -59,4 +64,8 @@ int main(void)
   scanf("%d %f %d",&principle,&interest,&time);
   printf("The SI is %f\n",si(principle,interest,time));
   printf("The CI is %f\n",ci(principle,interest,time));
+
+  printf("Enter temperature to convert it to centigrade\n");
+  scanf("%f",&temp);
+  printf("%f is %f centigrade\n",temp,convert_to_centigrade(temp));
 }

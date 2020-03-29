@@ -9,9 +9,14 @@ int gcd(int num1,int num2);
 int lcm(int num1,int num2);
 float si(int principle,float interest,int time);
 float ci(int principle,float interest,int time);
-float convert_to_centigrade(int temp);
+float convert_to_centigrade(float temp);
+float convert_to_fahrenheit(float temp);
 
-float convert_to_centigrade(int temp) {
+float convert_to_fahrenheit(float temp){
+  return (temp * 9 / 5) + 32;
+}
+
+float convert_to_centigrade(float temp) {
   return ((temp - 32) * 5) / 9.00;
 }
 
@@ -52,7 +57,7 @@ int main(void)
   int num1 = 2;
   int num2 = 3;
   int principle,time;
-  float interest,temp;
+  float interest,temp1,temp2;
   printf("%d is %s\n",num1, is_even(num1)?"even":"not even");
   printf("%d is %s\n", num1, is_odd(num1)? "odd" : "not odd");
   printf("The square of %d is %d\n",num1,square(num1));
@@ -65,7 +70,11 @@ int main(void)
   printf("The SI is %f\n",si(principle,interest,time));
   printf("The CI is %f\n",ci(principle,interest,time));
 
-  printf("Enter temperature to convert it to centigrade\n");
-  scanf("%f",&temp);
-  printf("%f is %f centigrade\n",temp,convert_to_centigrade(temp));
+  printf("Enter fahrenheit to convert it to centigrade\n");
+  scanf("%f",&temp1);
+  printf("%f is %f centigrade\n",temp1,convert_to_centigrade(temp1));
+
+  printf("Enter centigrade to convert it to fahrenheit\n");
+  scanf("%f",&temp2);
+  printf("%f is %f fahrenheit\n",temp2,convert_to_fahrenheit(temp2));
 }

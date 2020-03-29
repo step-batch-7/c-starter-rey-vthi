@@ -5,6 +5,16 @@ int fibonacci(int count);
 void odd_series(int limit);
 void even_series(int limit);
 void multiplication_table(int multiplicand, int limit);
+long int summation(int start, int to);
+
+long int summation(int start, int end){
+  long int sum = 0;
+  for(int num = start; num <= end; num++) {
+    sum += num;
+  }
+  return sum;
+}
+
 
 void multiplication_table(int multiplicand, int limit){
   for(int multiplier = 1; multiplier <= limit; multiplier++)
@@ -46,7 +56,7 @@ unsigned long int factorial(int num){
 
 int main(void)
 {
-  int num,count,multiplicand,limit;
+  int num,count,multiplicand,limit,start,end;
   printf("Enter a number to find factorial\n");
   scanf("%d", &num);
   printf("Factorial of %d is %lu\n",num,factorial(num));
@@ -66,5 +76,9 @@ int main(void)
   printf("enter the multiplicand and max multiplier to print table till that\n");
   scanf("%d%d", &multiplicand, &limit);
   multiplication_table(multiplicand, limit);
+
+  printf("Enter starting and ending number to find summation of those\n");
+  scanf("%d %d", &start, &end);
+  printf("summation is %ld\n",summation(start, end));
   return 0;
 }

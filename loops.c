@@ -4,9 +4,9 @@ unsigned long int factorial(int num);
 int fibonacci(int count);
 void odd_series(int limit);
 void even_series(int limit);
-void table(int multiplicand, int limit);
+void multiplication_table(int multiplicand, int limit);
 
-void table(int multiplicand, int limit){
+void multiplication_table(int multiplicand, int limit){
   for(int multiplier = 1; multiplier <= limit; multiplier++)
   {
     printf("%d x %d = %d\n", multiplicand, multiplier, multiplicand * multiplier);
@@ -65,6 +65,6 @@ int main(void)
 
   printf("enter the multiplicand and max multiplier to print table till that\n");
   scanf("%d%d", &multiplicand, &limit);
-  table(multiplicand, limit);
+  multiplication_table(multiplicand, limit);
   return 0;
 }

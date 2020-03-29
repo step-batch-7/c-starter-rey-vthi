@@ -7,6 +7,15 @@ void even_series(int limit);
 void multiplication_table(int multiplicand, int limit);
 long int summation(int start, int to);
 long int product(int start, int end);
+void odds_between(int start, int end);
+
+void odds_between(int start, int end){
+  int starting_odd = start % 2 != 0 ? start : start + 1;
+  printf("Odds from %d to %d are: \n",start,end);
+  for (int num = starting_odd; num <= end; num+=2) {
+    printf("%d\n", num);
+    }
+}
 
 long int product(int start, int end){
   long int product = 1;
@@ -93,5 +102,9 @@ int main(void)
   printf("Enter starting and ending number to find product of those\n");
   scanf("%d %d", &start, &end);
   printf("summation is %ld\n",product(start, end));
+
+  printf("Enter the two numbers to print all odds between those numbers\n");
+  scanf("%d %d", &start, &end);
+  odds_between(start, end);
   return 0;
 }

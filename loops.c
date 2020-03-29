@@ -11,6 +11,14 @@ void odd_series(int limit){
   }
 } 
 
+void even_series(int limit)
+{
+  printf("Even numbers from 1 to %d are: \n",limit);
+  for(int even = 2; even <= limit; even += 2){
+    printf("%d\n", even);
+  }
+}
+
 int fibonacci(int count) {
   int first = 0, second = 1;
   printf("Fibonacci Series :\n");
@@ -41,5 +49,9 @@ int main(void)
   printf("Enter a number to print odd numbers till that\n");
   scanf("%d", &num);
   odd_series(num);
+
+  printf("Enter a number to print even numbers till that\n");
+  scanf("%d", &num);
+  even_series(num);
   return 0;
 }

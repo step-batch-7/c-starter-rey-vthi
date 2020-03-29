@@ -13,6 +13,11 @@ float convert_to_centigrade(float temp);
 float convert_to_fahrenheit(float temp);
 int greater(int num1,int num2);
 int greatest(int num1,int num2,int num3);
+float average(int num1,int num2,int num3);
+
+float average(int num1,int num2,int num3){
+  return (num1+num2+num3)/3.00;
+}
 
 int greatest(int num1,int num2,int num3){
   return greater(greater(num1,num2),num3);
@@ -89,7 +94,8 @@ int main(void)
   scanf("%f",&temp2);
   printf("%f is %f fahrenheit\n",temp2,convert_to_fahrenheit(temp2));
 
-  printf("Enter three numbers to find the greatest among them\n");
+  printf("Enter three numbers to find the greatest and avereage among them\n");
   scanf("%d %d %d",&num1,&num2,&num3);
   printf("greatest number is %d\n",greatest(num1,num2,num3));
+  printf("Average of above numbers is %f\n",average(num1,num2,num3));
 }

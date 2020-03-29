@@ -3,6 +3,15 @@
 unsigned long int factorial(int num);
 int fibonacci(int count);
 void odd_series(int limit);
+void even_series(int limit);
+void table(int multiplicand, int limit);
+
+void table(int multiplicand, int limit){
+  for(int multiplier = 1; multiplier <= limit; multiplier++)
+  {
+    printf("%d x %d = %d\n", multiplicand, multiplier, multiplicand * multiplier);
+  }
+}
 
 void odd_series(int limit){
   printf("Odd numbers from 1 to %d are: \n",limit);
@@ -37,7 +46,7 @@ unsigned long int factorial(int num){
 
 int main(void)
 {
-  int num,count;
+  int num,count,multiplicand,limit;
   printf("Enter a number to find factorial\n");
   scanf("%d", &num);
   printf("Factorial of %d is %lu\n",num,factorial(num));
@@ -53,5 +62,9 @@ int main(void)
   printf("Enter a number to print even numbers till that\n");
   scanf("%d", &num);
   even_series(num);
+
+  printf("enter the multiplicand and max multiplier to print table till that\n");
+  scanf("%d%d", &multiplicand, &limit);
+  table(multiplicand, limit);
   return 0;
 }

@@ -6,6 +6,15 @@ void odd_series(int limit);
 void even_series(int limit);
 void multiplication_table(int multiplicand, int limit);
 long int summation(int start, int to);
+long int product(int start, int end);
+
+long int product(int start, int end){
+  long int product = 1;
+  for(int num = start; num <= end; num++) {
+    product *= num;
+  }
+  return product;
+}
 
 long int summation(int start, int end){
   long int sum = 0;
@@ -80,5 +89,9 @@ int main(void)
   printf("Enter starting and ending number to find summation of those\n");
   scanf("%d %d", &start, &end);
   printf("summation is %ld\n",summation(start, end));
+
+  printf("Enter starting and ending number to find product of those\n");
+  scanf("%d %d", &start, &end);
+  printf("summation is %ld\n",product(start, end));
   return 0;
 }

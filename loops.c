@@ -2,6 +2,14 @@
 
 unsigned long int factorial(int num);
 int fibonacci(int count);
+void odd_series(int limit);
+
+void odd_series(int limit){
+  printf("Odd numbers from 1 to %d are: \n",limit);
+  for(int odd = 1; odd <= limit; odd += 2){
+    printf("%d\n", odd);
+  }
+} 
 
 int fibonacci(int count) {
   int first = 0, second = 1;
@@ -30,5 +38,8 @@ int main(void)
   scanf("%d", &count);
   fibonacci(count);
 
+  printf("Enter a number to print odd numbers till that\n");
+  scanf("%d", &num);
+  odd_series(num);
   return 0;
 }

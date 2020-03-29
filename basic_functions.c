@@ -11,6 +11,17 @@ float si(int principle,float interest,int time);
 float ci(int principle,float interest,int time);
 float convert_to_centigrade(float temp);
 float convert_to_fahrenheit(float temp);
+int greater(int num1,int num2);
+int greatest(int num1,int num2,int num3);
+
+int greatest(int num1,int num2,int num3){
+  return greater(greater(num1,num2),num3);
+}
+
+
+int greater(int num1,int num2){
+  return num1>num2?num1:num2;
+}
 
 float convert_to_fahrenheit(float temp){
   return (temp * 9 / 5) + 32;
@@ -56,7 +67,7 @@ int main(void)
 {
   int num1 = 2;
   int num2 = 3;
-  int principle,time;
+  int principle,time,num3;
   float interest,temp1,temp2;
   printf("%d is %s\n",num1, is_even(num1)?"even":"not even");
   printf("%d is %s\n", num1, is_odd(num1)? "odd" : "not odd");
@@ -77,4 +88,8 @@ int main(void)
   printf("Enter centigrade to convert it to fahrenheit\n");
   scanf("%f",&temp2);
   printf("%f is %f fahrenheit\n",temp2,convert_to_fahrenheit(temp2));
+
+  printf("Enter three numbers to find the greatest among them\n");
+  scanf("%d %d %d",&num1,&num2,&num3);
+  printf("greatest number is %d\n",greatest(num1,num2,num3));
 }

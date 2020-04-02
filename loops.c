@@ -8,6 +8,33 @@ void multiplication_table(int multiplicand, int limit);
 long int summation(int start, int to);
 long int product(int start, int end);
 void odds_between(int start, int end);
+void every_nth(int start, int end, int count);
+int sum_of_evens(int start, int end);
+void all_odds(int num);
+
+void all_odds(int num){
+  printf("odds in reverse order\n");
+  int odd = num % 2 != 0 ? num : num - 1;
+  for (; odd > 0; odd -= 2){
+    printf("%d\n",odd);
+  }
+}
+
+int sum_of_evens(int start,int end){
+  int sum = 0;
+  int num = start % 2 == 0 ? start : start + 1;
+  for (; num <= end;num+=2){
+    sum = sum + num;
+  }
+  return sum;
+}
+
+void every_nth(int start, int end, int count){
+  printf("Every %d th numbers are:\n", count);
+  for (int num = start; num <= end;num +=count){
+    printf("%d\n", num);
+  };
+}
 
 void odds_between(int start, int end){
   int starting_odd = start % 2 != 0 ? start : start + 1;
@@ -106,5 +133,17 @@ int main(void)
   printf("Enter the two numbers to print all odds between those numbers\n");
   scanf("%d %d", &start, &end);
   odds_between(start, end);
+
+  printf("Enter a range and any number to print every nth in that range\n");
+  scanf("%d %d %d", &start, &end, &count);
+  every_nth(start, end, count);
+
+  printf("Enter a range to find the sum of evens b/w the range\n");
+  scanf("%d %d", &start, &end);
+  printf("sum of evens is: %d ",sum_of_evens(start, end));
+
+  printf("Enter a number to print all odds till 1\n");
+  scanf("%d", &num);
+  all_odds(num);
   return 0;
 }
